@@ -1,0 +1,91 @@
+# Model name
+model_name: bv2_15
+# Number of output
+num_output: 15
+# All layers
+# layer: 1 --------------------------------------
+conv_1:
+    type_layer1: conv
+    kernel_size_layer1: 5
+    num_output_layer1: 80
+    # relu
+    is_relu_layer1: true
+    # pooling
+    is_pooling_layer1: true
+    pooling_size_layer1: 4
+    pooling_stride_layer1: 4
+# ------------------------------------------------
+# layer: 2 ---------------------------------------
+conv_2:
+    type_layer2: conv
+    kernel_size_layer2: 5
+    num_output_layer2: 100
+    # relu
+    is_relu_layer2: true
+    # pooling
+    is_pooling_layer2: true
+    pooling_size_layer2: 4
+    pooling_stride_layer2: 4
+# -------------------------------------------------
+#layer: 3
+conv_3:
+    type_layer3: conv
+    kernel_size_layer3: 5
+    num_output_layer3: 120
+    # relu
+    is_relu_layer3: true
+    # pooling
+    is_pooling_layer3: true
+    pooling_size_layer3: 2
+    pooling_stride_layer3: 2
+# ------ ----------------------------------------
+#layer: 4
+conv_4:
+    type_layer4: conv
+    kernel_size_layer4: 5
+    num_output_layer4: 150
+    # relu
+    is_relu_layer4: true
+    # pooling
+    is_pooling_layer4: false
+    pooling_size_layer4: 4
+    pooling_stride_layer4: 4
+# -------------------------------------------------
+# layer: 5 ----------------------------------------
+fc_1:
+    type_layer5: fc
+    num_output_layer5: 500
+    # relu
+    is_relu_layer5: true
+# -------------------------------------------------
+# layer: 6 ----------------------------------------
+drop1:
+    type_layer6: dropout
+# -------------------------------------------------
+# layer: 7 ----------------------------------------
+fc_2:
+    type_layer7: fc
+    num_output_layer7: 15
+    # relu
+    is_relu_layer7: false
+# -------------------------------------------------
+# layer: 8 ----------------------------------------
+# only support: 
+# 1/ SigmoidCrossEntropyLogits
+# 2/ SoftmaxCrossEntropyLogits
+cost:
+    type_layer8: loss
+    type_loss_layer8: SigmoidCrossEntropyLogits
+# -------------------------------------------------
+# layer: 9 ----------------------------------------
+# only support:
+# 1/ Optimizer
+#       Adam : AdamOptimizer
+# 2/ Learning rate
+#       fix
+train:
+    type_layer9: optimizer
+    type_optimizer_layer9: Adam
+    type_lr_layer9: fix
+    lr_layer9: 0.0001
+# -------------------------------------------------
